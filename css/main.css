@@ -1,0 +1,63 @@
+/* Basic style untuk CV */
+
+body {
+    font-family: "Jetbrains Mono";
+    margin: 20px;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* minimal setinggi layar */
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+article {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    flex: 1;
+    text-align: justify;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;   /* biar fotonya nggak ketarik */
+    border-radius: 150%;  /* bikin lingkaran */
+    border: 3px solid #2c3e50;
+    margin-bottom: 10px;
+}
+
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    padding: 10px;
+    background: #f1f1f1;
+}
