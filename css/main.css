@@ -191,7 +191,7 @@ footer {
     border-top: 1px solid #ddd;
 }
 
-/* ==================== RESPONSIVE ==================== */
+/* ==================== RESPONSIVE ==================== */ 
 @media (max-width: 768px) {
     article {
         padding: 20px;
