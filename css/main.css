@@ -2,9 +2,11 @@
 
 body {
     font-family: "Jetbrains Mono";
-    margin: 20px;
+    margin: 0px;
+    padding: 0px;
     background-color: #f8f9fa;
     color: #333;
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* minimal setinggi layar */
@@ -13,12 +15,16 @@ body {
 nav {
     background-color: #333;
     padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
     color: white;
     margin-right: 15px;
     text-decoration: none;
+    margin-right: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -43,21 +49,170 @@ ul {
     padding-left: 20px;
 }
 
+/* ==================== HEADINGS ==================== */
+h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 8px;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+article {
+    background-color: #fff;
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 1250px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    text-align: justify;
+}
+
+/* ==================== PROFILE SECTION ==================== */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header p {
+    margin: 8px 0;
+    color: #666;
+}
+
 .profile-photo {
     width: 200px;
     height: 200px;
     object-fit: cover;   /* biar fotonya nggak ketarik */
     border-radius: 150%;  /* bikin lingkaran */
-    border: 3px solid #2c3e50;
+    border: 3px solid black;
     margin-bottom: 10px;
+}
+
+/* ==================== ABOUT SECTION ==================== */
+
+.about-section {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.about-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.about-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+}
+
+.about-section p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-section a {
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.about-section a:hover {
+  text-decoration: underline;
+}
+
+.about-title::after {
+    content: "|";
+    animation: blink 1s infinite;
+    margin-left: 5px;
+}
+
+.about-closing {
+    font-style: italic;
+    color: #666;
+    border-left: 4px solid lightslategray;
+    padding-left: 15px;
+    margin-top: 30px;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+/* ==================== PORTOFOLIO / CV SECTIONS ==================== */
+.project-section a {
+    color: #4f46e5;
+    text-decoration: none;
+}
+
+/* ==================== SECTIONS ==================== */
+section {
+    margin-bottom: 30px;
+}
+
+section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+section li {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.7;
+}
+
+section li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: black;
+    font-weight: bold;
 }
 
 
 footer {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #777;
+    margin-top: auto;
+    padding: 20px;
+    background-color: #f1f1f1;
     text-align: center;
-    padding: 10px;
-    background: #f1f1f1;
+    color: #777;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    article {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    nav a {
+        display: block;
+        margin-bottom: 8px;
+    }
 }
