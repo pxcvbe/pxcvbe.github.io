@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600;700;900&display=swap');
+@import url('https://rsms.me/inter/inter.css');
 
 :root {
     --bg-base:      #0d0d0d;
@@ -12,14 +12,15 @@
     --text-primary: #f0ede8;
     --text-muted:   #888888;
     --text-dim:     #555555;
-    --font-sans:    'IBM Plex Sans', 'Arial Black', sans-serif;
-    --font-mono:    'IBM Plex Mono', 'Courier New', monospace;
+    --font-sans:    'Inter', 'Inter var', sans-serif;
+    --font-mono:    'Inter', monospace;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
     font-family: var(--font-sans);
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     margin: 0;
     padding: 0;
     background-color: var(--bg-base);
