@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio — Ivan Kurniawan</title>
+    <!-- Hydrate theme before first paint to avoid a flash (DESIGN.md §6) -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('terminalNav.theme');
+                document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav class="term-nav" aria-label="Primary">
+        <a href="index.html" class="cell cell-wordmark">
+            <span class="wordmark">IVAN<br>\K.</span>
+        </a>
+
+        <a href="index.html" class="cell cell-link" data-decode="HOME" aria-label="Home">
+            <span class="label" aria-hidden="true"><span class="label-text">HOME</span><span class="caret"></span></span>
+            <span class="overlay" aria-hidden="true"></span>
+        </a>
+
+        <a href="portofolio.html" class="cell cell-link" data-decode="PORTOFOLIO" aria-label="Portfolio">
+            <span class="label" aria-hidden="true"><span class="label-text">PORTOFOLIO</span><span class="caret"></span></span>
+            <span class="overlay" aria-hidden="true"></span>
+        </a>
+
+        <div class="cell cell-socials">
+            <span class="cell-heading">Socials</span>
+            <span class="icons">
+                <a href="https://github.com/pxcvbe" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ivan-kurniawan-185b39284/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.6 13.6h-2.37V9.9c0-.88-.02-2.02-1.23-2.02-1.23 0-1.42.96-1.42 1.96v3.76H6.21V6h2.28v1.04h.03c.32-.6 1.1-1.23 2.26-1.23 2.4 0 2.85 1.58 2.85 3.64v4.15zM3.54 4.96a1.37 1.37 0 110-2.75 1.37 1.37 0 010 2.75zM4.73 13.6H2.34V6h2.39v7.6zM14.79 0H1.2C.54 0 0 .53 0 1.18v13.64C0 15.47.54 16 1.2 16h13.58c.66 0 1.2-.53 1.2-1.18V1.18C16 .53 15.46 0 14.8 0z"/></svg>
+                </a>
+                <a href="mailto:ivankurniawan20020604@gmail.com" title="Email" aria-label="Email">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12a1 1 0 011 1v8a1 1 0 01-1 1H2a1 1 0 01-1-1V4a1 1 0 011-1zm6 5.1L13.3 4.5H2.7L8 8.1zM2 5.6V12h12V5.6L8 9.3 2 5.6z"/></svg>
+                </a>
+            </span>
+        </div>
+
+        <div class="cell cell-theme">
+            <span class="cell-heading">Theme</span>
+            <button type="button" class="switch" aria-label="Switch to light mode">
+                <svg class="ico ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><g stroke-width="2" stroke-linecap="round" fill="none"><path d="M12 1v3M12 20v3M1 12h3M20 12h3M4 4l2 2M18 18l2 2M20 4l-2 2M6 18l-2 2"/></g></svg>
+                <svg class="ico ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+                <span class="knob" aria-hidden="true"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav">
+        <a href="index.html" class="m-wordmark">IK</a>
+        <div class="m-links">
+            <a href="index.html">Home</a>
+            <a href="portofolio.html">PORTOFOLIO</a>
+            <span class="m-socials">
+                <a href="https://github.com/pxcvbe" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ivan-kurniawan-185b39284/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.6 13.6h-2.37V9.9c0-.88-.02-2.02-1.23-2.02-1.23 0-1.42.96-1.42 1.96v3.76H6.21V6h2.28v1.04h.03c.32-.6 1.1-1.23 2.26-1.23 2.4 0 2.85 1.58 2.85 3.64v4.15zM3.54 4.96a1.37 1.37 0 110-2.75 1.37 1.37 0 010 2.75zM4.73 13.6H2.34V6h2.39v7.6zM14.79 0H1.2C.54 0 0 .53 0 1.18v13.64C0 15.47.54 16 1.2 16h13.58c.66 0 1.2-.53 1.2-1.18V1.18C16 .53 15.46 0 14.8 0z"/></svg>
+                </a>
+                <a href="mailto:ivankurniawan20020604@gmail.com" title="Email" aria-label="Email">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12a1 1 0 011 1v8a1 1 0 01-1 1H2a1 1 0 01-1-1V4a1 1 0 011-1zm6 5.1L13.3 4.5H2.7L8 8.1zM2 5.6V12h12V5.6L8 9.3 2 5.6z"/></svg>
+                </a>
+            </span>
+            <button type="button" class="switch" aria-label="Switch to light mode">
+                <svg class="ico ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><g stroke-width="2" stroke-linecap="round" fill="none"><path d="M12 1v3M12 20v3M1 12h3M20 12h3M4 4l2 2M18 18l2 2M20 4l-2 2M6 18l-2 2"/></g></svg>
+                <svg class="ico ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+                <span class="knob" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+    <article>
+        <header>
+            <h1>SATUPINTU / Jalumart</h1>
+            <p>Loyalty Point Apps &nbsp;|&nbsp; Android &amp; Web Admin</p>
+            <p>Aplikasi loyalty point berdasarkan penjualan telur dengan Active Users 50+</p>
+        </header>
+
+        <section class="shots-section">
+            <h2>Android</h2>
+            <div class="shot-grid">
+                <figure class="shot-card" data-shot
+                    data-src="data/portofolio-docs/satupintu-jalumart/android-login.jpg"
+                    data-caption="Tampilan Android — Login">
+                    <div class="shot-thumb">
+                        <img src="data/portofolio-docs/satupintu-jalumart/android-login.jpg" alt="Android Login Page" loading="lazy">
+                    </div>
+                    <figcaption>Login</figcaption>
+                </figure>
+                <figure class="shot-card" data-shot
+                    data-src="data/portofolio-docs/satupintu-jalumart/android-register-role.jpg"
+                    data-caption="Tampilan Android — Register Role">
+                    <div class="shot-thumb">
+                        <img src="data/portofolio-docs/satupintu-jalumart/android-register-role.jpg" alt="Android Register Role Page" loading="lazy">
+                    </div>
+                    <figcaption>Register Role</figcaption>
+                </figure>
+                <figure class="shot-card" data-shot
+                    data-src="data/portofolio-docs/satupintu-jalumart/android-dashboard.jpg"
+                    data-caption="Tampilan Android — Dashboard">
+                    <div class="shot-thumb">
+                        <img src="data/portofolio-docs/satupintu-jalumart/android-dashboard.jpg" alt="Android Dashboard Page" loading="lazy">
+                    </div>
+                    <figcaption>Dashboard</figcaption>
+                </figure>
+                <figure class="shot-card" data-shot
+                    data-src="data/portofolio-docs/satupintu-jalumart/android-buy-eggs.jpg"
+                    data-caption="Tampilan Android — Beli Telur">
+                    <div class="shot-thumb">
+                        <img src="data/portofolio-docs/satupintu-jalumart/android-buy-eggs.jpg" alt="Android Buy Eggs Page" loading="lazy">
+                    </div>
+                    <figcaption>Beli Telur</figcaption>
+                </figure>
+                <figure class="shot-card" data-shot
+                    data-src="data/portofolio-docs/satupintu-jalumart/android-history-order.jpg"
+                    data-caption="Tampilan Android — History Orders">
+                    <div class="shot-thumb">
+                        <img src="data/portofolio-docs/satupintu-jalumart/android-history-order.jpg" alt="Android History Order Page" loading="lazy">
+                    </div>
+                    <figcaption>History Orders</figcaption>
+                </figure>
+                <figure class="shot-card" data-shot
+                    data-src="data/portofolio-docs/satupintu-jalumart/android-market-point-view1.jpg"
+                    data-caption="Tampilan Android — Market Point 1">
+                    <div class="shot-thumb">
+                        <img src="data/portofolio-docs/satupintu-jalumart/android-market-point-view1.jpg" alt="Android Market Point Page 1" loading="lazy">
+                    </div>
+                    <figcaption>Market Point 1</figcaption>
+                </figure>
+                <figure class="shot-card" data-shot
+                    data-src="data/portofolio-docs/satupintu-jalumart/android-market-point-view2.jpg"
+                    data-caption="Tampilan Android — Market Point 2">
+                    <div class="shot-thumb">
+                        <img src="data/portofolio-docs/satupintu-jalumart/android-market-point-view2.jpg" alt="Android Market Point Page 2" loading="lazy">
+                    </div>
+                    <figcaption>Market Point 2</figcaption>
+                </figure>
+                <figure class="shot-card" data-shot
+                    data-src="data/portofolio-docs/satupintu-jalumart/android-reff-mitra.jpg"
+                    data-caption="Tampilan Android — Referral Mitra">
+                    <div class="shot-thumb">
+                        <img src="data/portofolio-docs/satupintu-jalumart/android-reff-mitra.jpg" alt="Android Referral Mitra Page" loading="lazy">
+                    </div>
+                    <figcaption>Referral Mitra</figcaption>
+                </figure>
+                <figure class="shot-card" data-shot
+                    data-src="data\portofolio-docs\satupintu-jalumart\android-chat-agent1.jpg"
+                    data-caption="Tampilan Android — Live Chat Agent 1">
+                    <div class="shot-thumb">
+                        <img src="data\portofolio-docs\satupintu-jalumart\android-chat-agent1.jpg" alt="Android Chat Agent Page" loading="lazy">
+                    </div>
+                    <figcaption>Live Chat Agent 1</figcaption>
+                </figure>
+                <figure class="shot-card" data-shot
+                    data-src="data\portofolio-docs\satupintu-jalumart\android-chat-agent2.jpg"
+                    data-caption="Tampilan Android — Live Chat Agent 2">
+                    <div class="shot-thumb">
+                        <img src="data\portofolio-docs\satupintu-jalumart\android-chat-agent2.jpg" alt="Android Chat Agent Page" loading="lazy">
+                    </div>
+                    <figcaption>Live Chat Agent 2</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="shots-section">
+            <h2>Website</h2>
+            <div class="shot-grid shot-grid-wide">
+                <figure class="shot-card" data-shot
+                    data-src="data/portofolio-docs/satupintu-jalumart/web-market-list.png"
+                    data-caption="Tampilan Web Admin — Market List">
+                    <div class="shot-thumb">
+                        <img src="data/portofolio-docs/satupintu-jalumart/web-market-list.png" alt="Website Admin Market Page" loading="lazy">
+                    </div>
+                    <figcaption>Admin — Market List</figcaption>
+                </figure>
+                <figure class="shot-card" data-shot
+                    data-src="data/portofolio-docs/satupintu-jalumart/web-hierarchy.png"
+                    data-caption="Tampilan Web Admin — Hierarchy">
+                    <div class="shot-thumb">
+                        <img src="data/portofolio-docs/satupintu-jalumart/web-hierarchy.png" alt="Website Admin Hierarchy Page" loading="lazy">
+                    </div>
+                    <figcaption>Admin — Hierarchy</figcaption>
+                </figure>
+            </div>
+        </section>
+    </article>
+
+    <!-- Lightbox modal -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button type="button" class="lb-close" aria-label="Close">&times;</button>
+        <button type="button" class="lb-nav lb-prev" aria-label="Previous image">&#8592;</button>
+        <figure class="lb-stage">
+            <img class="lb-image" src="" alt="">
+            <figcaption class="lb-caption"></figcaption>
+            <span class="lb-count"></span>
+        </figure>
+        <button type="button" class="lb-nav lb-next" aria-label="Next image">&#8594;</button>
+    </div>
+
+    <footer>
+        <p>Copyright &copy; 2026 Ivan K</p>
+    </footer>
+
+    <script src="js/nav.js"></script>
+    <script>
+        (function () {
+            var shots = Array.prototype.slice.call(document.querySelectorAll('[data-shot]'));
+            if (!shots.length) return;
+
+            var lb       = document.getElementById('lightbox');
+            var lbImage  = lb.querySelector('.lb-image');
+            var lbCap    = lb.querySelector('.lb-caption');
+            var lbCount  = lb.querySelector('.lb-count');
+            var btnClose = lb.querySelector('.lb-close');
+            var btnPrev  = lb.querySelector('.lb-prev');
+            var btnNext  = lb.querySelector('.lb-next');
+            var current  = 0;
+            var lastFocus = null;
+
+            function show(i) {
+                current = (i + shots.length) % shots.length;
+                var fig = shots[current];
+                lbImage.src = fig.getAttribute('data-src');
+                lbImage.alt = fig.getAttribute('data-caption') || '';
+                lbCap.textContent = fig.getAttribute('data-caption') || '';
+                lbCount.textContent = (current + 1) + ' / ' + shots.length;
+            }
+
+            function open(i) {
+                lastFocus = document.activeElement;
+                show(i);
+                lb.classList.add('is-open');
+                lb.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                btnNext.focus();
+            }
+
+            function close() {
+                lb.classList.remove('is-open');
+                lb.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                lbImage.src = '';
+                if (lastFocus) lastFocus.focus();
+            }
+
+            shots.forEach(function (fig, i) {
+                fig.setAttribute('tabindex', '0');
+                fig.setAttribute('role', 'button');
+                fig.addEventListener('click', function () { open(i); });
+                fig.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
+                });
+            });
+
+            btnPrev.addEventListener('click', function () { show(current - 1); });
+            btnNext.addEventListener('click', function () { show(current + 1); });
+            btnClose.addEventListener('click', close);
+            lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+
+            document.addEventListener('keydown', function (e) {
+                if (!lb.classList.contains('is-open')) return;
+                if (e.key === 'Escape') close();
+                else if (e.key === 'ArrowLeft') show(current - 1);
+                else if (e.key === 'ArrowRight') show(current + 1);
+            });
+        })();
+    </script>
+</body>
+</html>
