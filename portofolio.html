@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio — Ivan Kurniawan</title>
+    <!-- Hydrate theme before first paint to avoid a flash (DESIGN.md §6) -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('terminalNav.theme');
+                document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav class="term-nav" aria-label="Primary">
+        <a href="index.html" class="cell cell-wordmark">
+            <span class="wordmark">IVAN<br>\K.</span>
+        </a>
+
+        <a href="index.html" class="cell cell-link" data-decode="HOME" aria-label="Home">
+            <span class="label" aria-hidden="true"><span class="label-text">HOME</span><span class="caret"></span></span>
+            <span class="overlay" aria-hidden="true"></span>
+        </a>
+
+        <a href="portofolio.html" class="cell cell-link" data-decode="PORTOFOLIO" aria-label="Portfolio">
+            <span class="label" aria-hidden="true"><span class="label-text">PORTOFOLIO</span><span class="caret"></span></span>
+            <span class="overlay" aria-hidden="true"></span>
+        </a>
+
+        <div class="cell cell-socials">
+            <span class="cell-heading">Socials</span>
+            <span class="icons">
+                <a href="https://github.com/pxcvbe" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ivan-kurniawan-185b39284/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.6 13.6h-2.37V9.9c0-.88-.02-2.02-1.23-2.02-1.23 0-1.42.96-1.42 1.96v3.76H6.21V6h2.28v1.04h.03c.32-.6 1.1-1.23 2.26-1.23 2.4 0 2.85 1.58 2.85 3.64v4.15zM3.54 4.96a1.37 1.37 0 110-2.75 1.37 1.37 0 010 2.75zM4.73 13.6H2.34V6h2.39v7.6zM14.79 0H1.2C.54 0 0 .53 0 1.18v13.64C0 15.47.54 16 1.2 16h13.58c.66 0 1.2-.53 1.2-1.18V1.18C16 .53 15.46 0 14.8 0z"/></svg>
+                </a>
+                <a href="mailto:ivankurniawan20020604@gmail.com" title="Email" aria-label="Email">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12a1 1 0 011 1v8a1 1 0 01-1 1H2a1 1 0 01-1-1V4a1 1 0 011-1zm6 5.1L13.3 4.5H2.7L8 8.1zM2 5.6V12h12V5.6L8 9.3 2 5.6z"/></svg>
+                </a>
+            </span>
+        </div>
+
+        <div class="cell cell-theme">
+            <span class="cell-heading">Theme</span>
+            <button type="button" class="switch" aria-label="Switch to light mode">
+                <svg class="ico ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><g stroke-width="2" stroke-linecap="round" fill="none"><path d="M12 1v3M12 20v3M1 12h3M20 12h3M4 4l2 2M18 18l2 2M20 4l-2 2M6 18l-2 2"/></g></svg>
+                <svg class="ico ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+                <span class="knob" aria-hidden="true"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav">
+        <a href="index.html" class="m-wordmark">IK</a>
+        <div class="m-links">
+            <a href="index.html">Home</a>
+            <a href="portofolio.html">PORTOFOLIO</a>
+            <span class="m-socials">
+                <a href="https://github.com/pxcvbe" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ivan-kurniawan-185b39284/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.6 13.6h-2.37V9.9c0-.88-.02-2.02-1.23-2.02-1.23 0-1.42.96-1.42 1.96v3.76H6.21V6h2.28v1.04h.03c.32-.6 1.1-1.23 2.26-1.23 2.4 0 2.85 1.58 2.85 3.64v4.15zM3.54 4.96a1.37 1.37 0 110-2.75 1.37 1.37 0 010 2.75zM4.73 13.6H2.34V6h2.39v7.6zM14.79 0H1.2C.54 0 0 .53 0 1.18v13.64C0 15.47.54 16 1.2 16h13.58c.66 0 1.2-.53 1.2-1.18V1.18C16 .53 15.46 0 14.8 0z"/></svg>
+                </a>
+                <a href="mailto:ivankurniawan20020604@gmail.com" title="Email" aria-label="Email">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12a1 1 0 011 1v8a1 1 0 01-1 1H2a1 1 0 01-1-1V4a1 1 0 011-1zm6 5.1L13.3 4.5H2.7L8 8.1zM2 5.6V12h12V5.6L8 9.3 2 5.6z"/></svg>
+                </a>
+            </span>
+            <button type="button" class="switch" aria-label="Switch to light mode">
+                <svg class="ico ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><g stroke-width="2" stroke-linecap="round" fill="none"><path d="M12 1v3M12 20v3M1 12h3M20 12h3M4 4l2 2M18 18l2 2M20 4l-2 2M6 18l-2 2"/></g></svg>
+                <svg class="ico ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+                <span class="knob" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+    <article>
+        <header>
+            <img src="/images/profile/profile.jpg" alt="Foto Profil" class="profile-photo">
+            <h1>Ivan Kurniawan</h1>
+            <p>ivankurniawan20020604@gmail.com &nbsp;|&nbsp; Bekasi, Indonesia</p>
+            <p>0898-7047-258</p>
+        </header>
+
+        <section>
+            <h2>Pendidikan</h2>
+            <ul>
+                <li>
+                    <strong>S1 Informatika</strong>
+                    <b>Universitas Borobudur</b>
+                    2020 – 2025
+                </li>
+                <li>
+                    <strong>SMA Martia Bhakti</strong>
+                    <b>SMA</b>
+                    2017 – 2020
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Pengalaman</h2>
+            <ul>
+                <li>
+                    <strong>Web Developer Intern</strong>
+                    <b>Badan Kebijakan Pembangunan Kesehatan — Kemenkes RI (2023)</b>
+                    <br>Mengembangkan landing page menggunakan PHP Native &amp; JQuery.
+                </li>
+                <li>
+                    <strong>Junior Web Developer</strong>
+                    <b>BBPVP Bekasi (2025)</b>
+                    <br>Belajar tentang dasar HTML, CSS, Javascript, membangun website, Fetch Public API dengan JQuery, Version Control dengan Git &amp; GitHub.
+                </li>
+                <li>
+                    <strong>Java Development Trainee (JDT) Batch 16</strong>
+                    <b>Indivara Group (2025)</b>
+                    <br>Belajar tentang Dasar Java sampai Tingkat Lanjut (Dasar OOP, Maven, Backend SpringBoot), Frontend dengan React [Fetch API] (Deploy Vercel), Git &amp; Gitlab, Docker, Linux Command Dasar, CI/CD Jenkins.
+                </li>
+            </ul>
+        </section>
+
+        <section class="project-section">
+            <h2>Project</h2>
+            <ul>
+                <li>
+                    <strong>Telegram AI ChatBot</strong>
+                    <a href="https://github.com/pxcvbe/telegram-ai-bot" target="_blank" rel="noopener noreferrer">[REPO]</a>
+                    <br>Bot Telegram Chat dengan kemampuan AI menggunakan Groq API (LLaMA 3.3 70B), mendukung Chat Session / Context Memory.
+                </li>
+                <li>
+                    <strong>Youtube Downloader</strong>
+                    <a href="https://github.com/pxcvbe/youtube-downloader-v2" target="_blank" rel="noopener noreferrer">[REPO]</a>
+                    <br>Aplikasi untuk mempermudah pengguna mengunduh konten video atau audio dari platform YouTube.
+                </li>
+                <li>
+                    <strong>PXCVBE URL Shortener</strong>
+                    <a href="https://github.com/pxcvbe/pxcvbe-shortener" target="_blank" rel="noopener noreferrer">[BE]</a>
+                    &amp;
+                    <a href="https://github.com/pxcvbe/pxcvbe-shortener-fe" target="_blank" rel="noopener noreferrer">[FE]</a>
+                    <br>Aplikasi sederhana untuk memendekkan URL dengan fitur tracking clicks.
+                </li>
+                <li>
+                    <strong>Simple TodoList CLI App</strong>
+                    <a href="https://github.com/pxcvbe/todo-cli-node-v2" target="_blank" rel="noopener noreferrer">[REPO]</a>
+                    <br>Aplikasi Command-Line untuk mengelola daftar tugas dengan fitur menambah, melihat, menandai selesai, menghapus, dan filter tugas.
+                </li>
+                <li>
+                    <strong>Movie Info App</strong>
+                    <a href="https://pxcvbe-movie-app.web.app/" target="_blank" rel="noopener noreferrer">[DEMO]</a>
+                    <br>Tugas Frontend JDT Batch 16 — aplikasi Movie Information App dengan Public API (TMDB), fitur now playing, search, dan movie detail.
+                </li>
+                <li>
+                    <strong>PokeCatch That!</strong>
+                    <a href="https://pxcvbe-poke-app.web.app/" target="_blank" rel="noopener noreferrer">[DEMO]</a>
+                    <br>Tugas Frontend JDT Batch 16 — Pokédex App dengan PokeAPI, fitur menampilkan pokemon, search, menangkap, dan inventory.
+                </li>
+            </ul>
+        </section>
+
+        <section class="skills-section">
+            <h2>Keahlian & Tools</h2>
+            <ul>
+                <li>HTML / CSS / JS</li>
+                <li>Node.js</li>
+                <li>C++</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>Android Studio</li>
+                <li>Visual Studio Code</li>
+                <li>Git</li>
+                <li>MySQL / PostgreSQL</li>
+                <li>PortSwigger — Burp Suite</li>
+
+            </ul>
+        </section>
+
+        <section class="cv-section">
+            <h2>Curiculum Vitae (ID/EN)</h2>
+            <ul>
+                <li>                   
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM1.6 11.85H0v3.999h.791v-1.342h.803q.43 0 .732-.173.305-.175.463-.474a1.4 1.4 0 0 0 .161-.677q0-.375-.158-.677a1.2 1.2 0 0 0-.46-.477q-.3-.18-.732-.179m.545 1.333a.8.8 0 0 1-.085.38.57.57 0 0 1-.238.241.8.8 0 0 1-.375.082H.788V12.48h.66q.327 0 .512.181.185.183.185.522m1.217-1.333v3.999h1.46q.602 0 .998-.237a1.45 1.45 0 0 0 .595-.689q.196-.45.196-1.084 0-.63-.196-1.075a1.43 1.43 0 0 0-.589-.68q-.396-.234-1.005-.234zm.791.645h.563q.371 0 .609.152a.9.9 0 0 1 .354.454q.118.302.118.753a2.3 2.3 0 0 1-.068.592 1.1 1.1 0 0 1-.196.422.8.8 0 0 1-.334.252 1.3 1.3 0 0 1-.483.082h-.563zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638z"/>
+                    </svg>
+                    <strong>
+                        <a href="data\cv-docs\CV_ATS_IvanK_ID.pdf" target="_blank">Download CV [ID]</a>
+                    </strong>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM1.6 11.85H0v3.999h.791v-1.342h.803q.43 0 .732-.173.305-.175.463-.474a1.4 1.4 0 0 0 .161-.677q0-.375-.158-.677a1.2 1.2 0 0 0-.46-.477q-.3-.18-.732-.179m.545 1.333a.8.8 0 0 1-.085.38.57.57 0 0 1-.238.241.8.8 0 0 1-.375.082H.788V12.48h.66q.327 0 .512.181.185.183.185.522m1.217-1.333v3.999h1.46q.602 0 .998-.237a1.45 1.45 0 0 0 .595-.689q.196-.45.196-1.084 0-.63-.196-1.075a1.43 1.43 0 0 0-.589-.68q-.396-.234-1.005-.234zm.791.645h.563q.371 0 .609.152a.9.9 0 0 1 .354.454q.118.302.118.753a2.3 2.3 0 0 1-.068.592 1.1 1.1 0 0 1-.196.422.8.8 0 0 1-.334.252 1.3 1.3 0 0 1-.483.082h-.563zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638z"/>
+                    </svg>
+                    <strong>
+                        <a href="data\cv-docs\CV_ATS_IvanK_English.pdf" target="_blank">Download CV [EN]</a>
+                    </strong>
+                    
+                </li>
+            </ul>
+        </section>
+
+        <section class="certificate-section">
+            <h2>CERTIFICATE & DOCS</h2>
+            <ul>
+                <li>
+                    <strong>BBPVP - BEKASI</strong>
+                    JUNIOR WEB DEVELOPER - 2025
+                    <br></br>
+                    <strong>
+                        <a href="data\certificate-docs\279 SERTIFIKAT IVAN KURNIAWAN-7-11.pdf" target="_blank">View the docs &rarr;</a> 
+                    </strong>
+                </li>
+                <li>
+                    <strong>MUDA MUDI FEST 1.0</strong>
+                    VOLUNTEER CERTIFICATE - 2023
+                    <br></br>
+                    <strong>
+                        <a href="data\certificate-docs\sertifikat_mudamudifest.pdf" target="_blank">View the docs &rarr;</a> 
+                    </strong>
+                </li>
+                <li>
+                    <strong>INSTITUT SHANTI BHUANA</strong>
+                    ARTIFICIAL INTELLIGENCE UNTUK MENUNJANG PEKERJAAN - 2023
+                    <br></br>
+                    <strong>
+                        <a href="data\certificate-docs\Sertifikat_KuliahUmum_IvanKurniawan.pdf" target="_blank">View the docs &rarr;</a> 
+                    </strong>
+                </li>
+                <li>
+                    <strong>BADAN KEBIJAKAN PEMBANGUNAN KESEHATAN KEMENKES RI</strong>
+                    PROOF OF INTERNSHIP DOCS - 2023
+                    <br></br>
+                    <strong>
+                        <a href="data\certificate-docs\SuratKeteranganMagang.pdf" target="_blank">View the docs &rarr;</a> 
+                    </strong>
+                </li>
+                <li>
+                    <strong>SOLOLEARN</strong>
+                    C++ TUTORIAL COURSE - 2018
+                    <br></br>
+                    <strong>
+                        <a href="data\certificate-docs\C++_Learn.jpg" target="_blank">View the docs &rarr;</a> 
+                    </strong>
+                </li>
+            </ul>
+        </section>
+    </article>
+
+    <footer>
+        <p>Copyright &copy; 2026 Ivan K</p>
+    </footer>
+
+    <script src="js/nav.js"></script>
+</body>
+</html>

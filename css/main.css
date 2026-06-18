@@ -1,26 +1,48 @@
-@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+/* ─────────────────────────────────────────────────────────────
+   Theme tokens (DESIGN.md §2). The toggle flips data-theme on
+   <html>; everything below is derived from these four values so
+   the whole page responds to the switch, not just the nav.
+   ───────────────────────────────────────────────────────────── */
+:root,
+[data-theme="light"] {
+    --bg:        oklch(0.97 0.005 95);   /* warm bone   */
+    --fg:        oklch(0.18 0.01 95);    /* ink         */
+    --midground: oklch(0.82 0.01 95);    /* hover-fill + knob */
+    --accent:    oklch(0.62 0.14 55);    /* rust        */
+}
+
+[data-theme="dark"] {
+    --bg:        oklch(0.16 0.01 250);   /* cool ink    */
+    --fg:        oklch(0.94 0.005 250);  /* paper       */
+    --midground: oklch(0.32 0.015 250);  /* hover-fill + knob */
+    --accent:    oklch(0.78 0.13 75);    /* amber       */
+}
 
 :root {
-    --bg-base:      #0d0d0d;
-    --bg-surface:   #141414;
-    --bg-card:      #1a1a1a;
-    --bg-hover:     #222222;
-    --accent:       #ff5c00;
-    --accent-dim:   #cc4a00;
-    --border:       #2e2e2e;
-    --border-light: #3d3d3d;
-    --text-primary: #f0ede8;
-    --text-muted:   #888888;
-    --text-dim:     #555555;
-    --font-sans:    'Inter', 'Inter var', sans-serif;
-    --font-mono:    'Inter', monospace;
+    /* Semantic tokens derived from the theme tokens */
+    --bg-base:      var(--bg);
+    --bg-surface:   color-mix(in oklch, var(--fg) 3%, var(--bg));
+    --bg-card:      color-mix(in oklch, var(--fg) 5%, var(--bg));
+    --bg-hover:     color-mix(in oklch, var(--fg) 8%, var(--bg));
+    --border:       color-mix(in oklch, var(--fg) 14%, transparent);
+    --border-light: color-mix(in oklch, var(--fg) 24%, transparent);
+    --text-primary: var(--fg);
+    --text-muted:   color-mix(in oklch, var(--fg) 62%, var(--bg));
+    --text-dim:     color-mix(in oklch, var(--fg) 42%, var(--bg));
+    --accent-dim:   color-mix(in oklch, var(--accent) 72%, var(--bg));
+
+    --font-sans: 'Space Grotesk', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    color-scheme: light dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
     font-family: var(--font-sans);
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     margin: 0;
     padding: 0;
     background-color: var(--bg-base);
@@ -29,48 +51,266 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    transition: background-color 200ms ease, color 200ms ease;
 }
 
-nav {
-    background-color: var(--bg-base);
-    border-bottom: 1px solid var(--accent);
-    padding: 14px 40px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+/* ─────────────────────────────────────────────────────────────
+   Terminal-Grid Navigation (DESIGN.md §1–§6)
+   ───────────────────────────────────────────────────────────── */
+.term-nav {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.4fr 1.4fr;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     z-index: 100;
+    background: var(--bg);
+    color: var(--fg);
 }
 
-nav::before {
-    content: "//";
-    font-family: var(--font-mono);
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--accent);
-    margin-right: 12px;
+.term-nav .cell {
+    border-right: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+    min-height: 5.5rem;
+    display: flex;
+    align-items: flex-start;
 }
 
-nav a {
-    color: var(--text-muted);
+.term-nav .cell:last-child { border-right: none; }
+
+/* 3.1 Wordmark — dignity, not interaction. Plain currentColor. */
+.cell-wordmark {
     text-decoration: none;
+    color: var(--fg);
+    align-items: center;
+}
+
+.wordmark {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 1.0;
+    letter-spacing: -0.005em;
+    color: currentColor;
+}
+
+/* 3.2 Text links — the scramble decode */
+.cell-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--fg);
+    cursor: pointer;
+}
+
+.cell-link .label {
     font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.1875em;
     text-transform: uppercase;
-    padding: 6px 14px;
-    border: 1px solid transparent;
-    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
 }
 
-nav a:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    background: rgba(255, 92, 0, 0.05);
+.cell-link .overlay {
+    position: absolute;
+    inset: 4px;
+    background: var(--midground);
+    opacity: 0;
+    transition: opacity 250ms ease;   /* slow fade out */
+    pointer-events: none;
 }
 
+.cell-link:hover .overlay,
+.cell-link:focus-visible .overlay {
+    opacity: 0.08;
+    transition: opacity 0ms;          /* instant flash in */
+}
+
+/* 5. The dithered caret */
+.cell-link .caret {
+    display: none;
+    width: 0.9ch;
+    height: 0.95em;
+    margin-left: 0.5em;
+    background-image: repeating-conic-gradient(var(--fg) 0% 25%, transparent 0% 50%);
+    background-size: 2px 2px;
+    animation: caret-blink 1s steps(2, end) infinite;
+}
+
+.cell-link:hover .caret,
+.cell-link:focus-visible .caret,
+.cell-link.decoding .caret { display: inline-block; }
+
+@keyframes caret-blink { 50% { opacity: 0; } }
+
+/* 3.3 Socials cluster + 3.4 Theme toggle — heading | control */
+.cell-socials,
+.cell-theme {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cell-heading {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.1875em;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+.cell-socials .icons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.cell-socials .icons a {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fg);
+}
+
+.cell-socials .icons svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    opacity: 0.6;
+    transition: opacity 200ms;
+}
+
+.cell-socials .icons a:hover svg,
+.cell-socials .icons a:focus-visible svg { opacity: 1; }
+
+/* Theme switch pill */
+.switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    border-radius: 9999px;
+    border: 1px solid color-mix(in oklch, var(--fg) 25%, transparent);
+    background: color-mix(in oklch, var(--fg) 8%, transparent);
+    cursor: pointer;
+    padding: 0;
+    flex: 0 0 auto;
+    color: var(--fg);
+}
+
+.switch .ico {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    opacity: 0.4;
+    pointer-events: none;
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+.switch .ico-sun  { left: 4px; }
+.switch .ico-moon { right: 4px; }
+
+.switch .knob {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 9999px;
+    background: var(--midground);
+    transform: translate(2px, -50%);
+    transition: transform 200ms ease-out;
+}
+
+[data-theme="dark"] .switch .knob { transform: translate(24px, -50%); }
+
+/* Focus ring — rust / amber accent */
+.term-nav a:focus-visible,
+.switch:focus-visible,
+.mobile-nav a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+}
+
+/* Mobile fallback bar (the full drawer is out of scope per spec) */
+.mobile-nav {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    color: var(--fg);
+}
+
+.mobile-nav .m-wordmark {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 22px;
+    color: currentColor;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+}
+
+.mobile-nav .m-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.mobile-nav .m-links > a {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--fg);
+    transition: color 0.15s;
+}
+
+.mobile-nav .m-links > a:hover { color: var(--accent); }
+
+.mobile-nav .m-socials {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mobile-nav .m-socials a {
+    display: flex;
+    color: var(--fg);
+}
+
+.mobile-nav .m-socials svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    opacity: 0.6;
+    transition: opacity 200ms;
+}
+
+.mobile-nav .m-socials a:hover svg,
+.mobile-nav .m-socials a:focus-visible svg { opacity: 1; }
+
+/* Hide the grid nav below lg (1024px); show the mobile bar instead */
+@media (max-width: 1023px) {
+    .term-nav { display: none; }
+    .mobile-nav { display: flex; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Page content
+   ───────────────────────────────────────────────────────────── */
 hr { border: none; border-top: 1px solid var(--border); margin: 0; }
 
 article {
@@ -89,7 +329,7 @@ h1, h2, h3 { font-family: var(--font-sans); color: var(--text-primary); margin: 
 
 h1 {
     font-size: 2.8rem;
-    font-weight: 900;
+    font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.1;
     text-transform: uppercase;
@@ -97,7 +337,7 @@ h1 {
 
 h2 {
     font-size: 0.72rem;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
@@ -209,7 +449,7 @@ section li b {
 .skills-section li:hover {
     border-color: var(--accent);
     color: var(--accent);
-    background: rgba(255, 92, 0, 0.04);
+    background: color-mix(in oklch, var(--accent) 6%, var(--bg));
 }
 
 .project-section a {
@@ -224,7 +464,7 @@ section li b {
     transition: all 0.15s;
 }
 
-.project-section a:hover { background: var(--accent); color: #000; }
+.project-section a:hover { background: var(--accent); color: var(--bg); }
 
 .about-section { max-width: 1100px; margin: 0 auto; }
 
@@ -238,7 +478,7 @@ section li b {
 
 .about-title {
     font-size: 3.2rem;
-    font-weight: 900;
+    font-weight: 700;
     letter-spacing: -0.04em;
     text-transform: uppercase;
     line-height: 1;
@@ -279,7 +519,7 @@ section li b {
     transition: color 0.15s;
 }
 
-.about-section a:hover { color: #fff; }
+.about-section a:hover { color: var(--fg); }
 
 .about-closing {
     font-style: normal;
@@ -311,12 +551,20 @@ footer {
     letter-spacing: 0.08em;
 }
 
+/* 7. Reduced motion — flatten animations/transitions to ~0ms */
+@media (prefers-reduced-motion: reduce) {
+    .cell-link .caret { animation: none; }
+    .cell-link .overlay,
+    .switch .knob,
+    body { transition-duration: 0ms !important; }
+    .about-title::after { animation: none; }
+}
+
 @media (max-width: 768px) {
     article { padding: 32px 24px; margin: 32px auto 16px; width: calc(100% - 32px); }
     .about-article { width: calc(100% - 40px); margin: 40px auto 24px; padding: 32px 24px; }
     h1, .about-title { font-size: 2rem; }
     header h1 { font-size: 2.2rem; }
     .profile-photo { width: 110px; height: 110px; }
-    nav { padding: 12px 16px; flex-wrap: wrap; }
     .skills-section ul { grid-template-columns: 1fr 1fr; }
 }
